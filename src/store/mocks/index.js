@@ -37,10 +37,6 @@ module.exports = {
         if (!Vue.mocksActive)
           return null
         Vue.current_mock = require("@/store/" + moduleName + "/mocks/" + mockName + ".js") || null
-
-        console.log('current', Vue.current_mock); //eslint-disable-line
-        console.log('moduleName', moduleName); //eslint-disable-line
-        console.log('mockName', mockName); //eslint-disable-line
         if (attribute)
           return Vue.current_mock[attribute]
         return Vue.current_mock
@@ -63,7 +59,7 @@ module.exports = {
       try {
         if (!Vue.mocksActive)
           return null
-        Vue.current_mock = require("@/store/modules/" + moduleName + "/seeds/" + mockName + ".js") || null
+        Vue.current_mock = require("@/store/" + moduleName + "/seeds/" + mockName + ".js") || null
         if (attribute)
           return Vue.current_mock[attribute]
         return Vue.current_mock
